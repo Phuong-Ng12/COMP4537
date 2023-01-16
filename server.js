@@ -4,6 +4,14 @@ const fs = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
 const port = 3000;
+const cors = require('cors');
+
+var corsOptions = {
+	origin: 'http://localhost:3000',
+	optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
