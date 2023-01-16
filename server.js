@@ -9,12 +9,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+require("dotenv").config();
+var PUBLIC_URL = process.env.PUBLIC_URL;
+
 app.get('/', (req, res) => {
     let doc = fs.readFileSync('index.html', 'utf8');
     res.send(doc);
 });
 
-app.post('/chatbot', (req, res) => {
+app.post('PUBLIC_URL/chatbot', (req, res) => {
 	const message = req.body.message;
 	const number = message.match(/\d+/);
 	if (number) {
