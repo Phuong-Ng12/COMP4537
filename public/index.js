@@ -5,7 +5,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'POST',
 			// url: 'http://localhost:3000/chatbot',
-			url: 'https://${process.env.PUBLIC_URL}/chatbot',
+			url: '${process.env.PUBLIC_URL}/chatbot',
 			data: {
 				message: message
 			},
