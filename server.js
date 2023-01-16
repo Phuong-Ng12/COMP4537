@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     res.send(doc);
 });
 
-app.post('PUBLIC_URL/chatbot', (req, res) => {
+app.post(`${PUBLIC_URL}`/chatbot, (req, res) => {
 	const message = req.body.message;
 	const number = message.match(/\d+/);
 	if (number) {
